@@ -3,7 +3,7 @@
 # Yetayesh Events Web Applications # 
 https://webpages.charlotte.edu/fferariz/Ferariza-FinalProject/home.html
 
-#Project Overview#
+# Project Overview #
 This project is a custom web application for Yetayesh Wedding Events, designed using HTML, CSS, and JavaScript. It features interactive UI components, a modern responsive design, and an engaging user experience. The project includes a dynamic image carousel, an FAQ accordion, and a "Free Consultation" call-to-action, ensuring seamless navigation and user engagement.
 
 # Features #
