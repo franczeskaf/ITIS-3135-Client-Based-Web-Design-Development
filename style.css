@@ -1,0 +1,1134 @@
+/* Root Variables for Consistency */
+:root {
+    --primary-color: #ffffff; /* White for text */
+    --highlight-color: #cccccc; /* Light gray for highlights */
+    --background-color: #f5f5f5; /* Off-white for background */
+    --font-heading: 'Cormorant Garamond', serif; /* Elegant for headings */
+    --font-body: 'Playfair Display', serif; /* Classic for body */
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: #000; /* Black for text */
+    background-color: var(--background-color); /* Off-white for background */
+    line-height: 1.7;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    width: 100%;
+    background-color: #000; /* Black background */
+    border-bottom: 1px solid #ccc; /* Light gray border */
+    height: 80px; /* Consistent header height */
+    box-sizing: border-box;
+}
+
+
+
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color); /* White for visibility */
+    font-weight: 600; /* Slightly bold for emphasis */
+}
+
+/* Navigation Menu */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px; /* Equal spacing between items */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    font-family: var(--font-heading); /* Consistent font */
+    font-size: 1rem; /* Consistent size */
+    font-weight: bold; /* Bold for uniform emphasis */
+    color: var(--primary-color); /* White for readability */
+    text-decoration: none; /* Remove underlines */
+    text-transform: uppercase; /* Uniform capitalization */
+    padding: 10px 15px; /* Padding for spacing */
+    border-radius: .5px; /* Rounded corners for modern look */
+    position: relative; /* Required for pseudo-element positioning */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--highlight-color); /* Change text color on hover */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--highlight-color); /* Underline color */
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+nav ul li a.active {
+    color: var(--highlight-color); /* Match active link color to hover color */
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full underline for active link */
+    height: 2px;
+    background-color: var(--highlight-color); /* Underline color */
+}
+
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Instagram Button */
+.social-icon {
+    font-family: var(--font-heading); /* Match font with nav */
+    font-size: 1.3rem; /* Match font size with nav */
+    font-weight: bold; /* Uniform emphasis */
+    text-transform: uppercase; /* Match nav text transform */
+    color: var(--primary-color); /* White for default */
+    text-decoration: none; /* No underline */
+    padding: 8px 12px; /* Same padding as nav links */
+    position: relative; /* Required for pseudo-element positioning */
+    transition: color 0.3s ease;
+    background-color: transparent; /* Transparent by default */
+    margin-left: 10px; /* Add spacing between the button and nav items */
+}
+
+.social-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--highlight-color); /* Underline color */
+    transition: width 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--highlight-color); /* Change text color on hover */
+}
+
+.social-icon:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* Active state for social-icon */
+.social-icon.active {
+    color: var(--highlight-color); /* Match active color */
+}
+
+.social-icon.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full underline for active state */
+    height: 2px;
+    background-color: var(--highlight-color); /* Underline color */
+}
+
+
+/* Free Consultation Button (CTA) */
+.cta-button {
+    font-family: var(--font-heading); /* Match font with nav */
+    font-size: 1rem; /* Match font size with nav */
+    font-weight: bold; /* Maintain boldness for emphasis */
+    text-transform: uppercase; /* Uniform text transform */
+    color: var(--primary-color); /* White text */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Same padding as nav links */
+    background-color: #555; /* Medium gray background */
+    border: none; /* Remove any border or outline */
+    border-radius: -20px; /* Rounded corners */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover transition */
+    margin-left: 5px; /* Add spacing between nav items */
+
+}
+   
+
+.cta-button:hover {
+    background-color: #333; /* Dark gray on hover */
+    color: var(--primary-color); /* White text on hover */
+}
+
+/* Navigation and Header Adjustments */
+nav ul li a,
+.social-icon,
+.cta-button {
+    line-height: 1.7; /* Uniform vertical alignment with nav links */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px; /* Reduced spacing for smaller screens */
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Reduced spacing for smaller screens */
+    }
+
+    .social-icon,
+    .cta-button {
+        width: 100%; /* Full width on smaller screens */
+        text-align: center;
+    }
+}
+
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 75vh;
+    width: calc(100% - 10px);
+    margin: 5px auto;
+    overflow: hidden;
+    border-radius: 0px;
+    background-color: #edebe5;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: middle bottom center;
+}
+
+/* Main Heading Section */
+.main-heading {
+    text-align: center;
+    padding: 10px 10px; /* Reduced padding */
+    background-color: #555;
+}
+
+.main-heading h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: var(--highlight-color);
+    font-weight: 200;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Services Section */
+.services {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--background-color); /* Off-white for background */
+}
+
+.services h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: #333; /* Dark gray for heading */
+    margin-bottom: -10px;
+    margin-top: -20px;
+}
+
+.services p {
+    font-size: 1.2rem;
+    color: #666; /* Medium gray for text */
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* Grid Layout for Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 50px; /* Spacing between items */
+    justify-items: center; /* Center each grid item horizontally */
+    align-items: start;
+    margin-top: 20px;
+}
+
+/* Service Item */
+.service-item {
+    background-color: #fff; /* White background */
+    border-radius: 0px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 1000px; /* Limit the width of each card */
+    max-height: 1000px;
+}
+
+.service-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Slightly darker shadow on hover */
+}
+
+/* Service Carousel */
+.service-carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    height: 300px; /* Set consistent height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 200%; /* Ensure full-width alignment */
+    height: 300px; /* Align height with the carousel */
+    margin-top: 50px;
+    border-radius: 0px;
+}
+
+.service-carousel-item {
+    flex: 0 0 100%; /* Each image takes up 100% of the carousel width */
+    display: flex;
+    justify-content: center; /* Horizontally center images */
+    align-items: center; /* Vertically center images */
+    height: 100%; /* Align height with the carousel */
+}
+
+.service-carousel-item img {
+    max-width: 100%; /* Ensure the image fits within its container */
+    max-height: 150%; /* Ensure the image doesn't overflow the height */
+    object-fit: contain; /* Ensure images fit without cropping */
+}
+
+/* Carousel Buttons */
+.service-carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: #fff; /* White text */
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* Circular buttons */
+}
+
+.service-carousel-button.prev {
+    left: 10px;
+}
+
+.service-carousel-button.next {
+    right: 10px;
+}
+
+.service-carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker black on hover */
+}
+
+/* Service Content */
+.service-content {
+    padding: 20px;
+}
+
+.service-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #333; /* Dark gray for subheading */
+    margin-bottom: 0px;
+    margin-top: -15px;
+}
+
+.service-content p {
+    font-size: 1rem;
+    color: #555; /* Medium gray for text */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-content .cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #333; /* Dark gray for button */
+    color: #fff; /* White text */
+    border-radius: 25px; /* Rounded corners */
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.service-content .cta-button:hover {
+    background-color: #555; /* Medium gray on hover */
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+    }
+
+    .service-carousel {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+
+    .service-carousel-item img {
+        max-height: 250px; /* Adjust image size for smaller screens */
+    }
+}
+
+
+
+/* Packages Section */
+.packages {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content within the section */
+    flex-wrap: wrap; /* Ensure responsive wrapping for smaller screens */
+    padding: 60px 20px;
+    margin-top: 40px;
+    gap: 20px;
+    background-color: #f7f7f7; /* Light gray background for the entire section */
+    color: #000000; /* Black text for content */
+    text-align: center; /* Center-align text for consistency */
+}
+
+.packages-image {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px; /* Add rounded corners for images */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.packages-content {
+    flex: 1;
+    padding: 20px; /* Adjusted padding for better spacing */
+    border-radius: 8px; /* Consistent rounded corners */
+    color: #333333; /* Dark gray text for readability */
+}
+
+.packages-content h2 {
+    font-family: var(--font-heading); /* Consistent font for headings */
+    font-size: 2.4rem; /* Adjusted font size for better readability */
+    color: #333333; /* Dark gray for the heading */
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Add spacing between letters */
+    text-align: center; /* Center-align the heading */
+}
+
+.packages-content p {
+    font-family: var(--font-body); /* Consistent font for body text */
+    font-size: 1.2rem; /* Adjusted font size for readability */
+    color: #555555; /* Medium gray for body text */
+    margin: 10px 0;
+    line-height: 1.6; /* Improved line spacing for readability */
+    text-align: center; /* Align text to center */
+}
+
+/* CTA Button Styling */
+.packages-content .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #333333; /* Dark gray background color */
+    color: #ffffff; /* White text for contrast */
+    border-radius: 25px; /* Rounded corners for the button */
+    text-decoration: none; /* Remove underline */
+    font-family: var(--font-heading); /* Consistent font with headings */
+    font-weight: bold; /* Bold text for emphasis */
+    font-size: 1.1rem; /* Slightly larger font for CTA button */
+    margin-top: 20px;
+    text-align: center; /* Center-align text inside the button */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.packages-content .cta-button:hover {
+    background-color: #555555; /* Medium gray for hover effect */
+    transform: scale(1.05); /* Subtle zoom-in effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .packages {
+        flex-direction: column; /* Stack items vertically for smaller screens */
+    }
+
+    .packages-image {
+        width: 100%; /* Full width for images on smaller screens */
+    }
+
+    .packages-content {
+        text-align: center; /* Center-align text for smaller screens */
+    }
+}
+
+
+/* Carousel Section */
+.carousel {
+    text-align: center;
+    background-color: #f7f7f7; /* Light gray background */
+    margin-top: 30px;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    position: relative;
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(-50vw + 50%); /* Center aligns with full width */
+}
+
+/* Carousel Title */
+.carousel h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: #333333; /* Dark gray for the title */
+    margin-bottom: 20px;
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+    margin-bottom: 50px;
+}
+
+/* Carousel Images */
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    width: auto;
+    height: 500px; /* Adjust height as needed */
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Images */
+.carousel-item img:hover {
+    transform: scale(1.05); /* Subtle zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Slightly darker shadow on hover */
+}
+
+/* Navigation Buttons */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: #ffffff; /* White text for contrast */
+    border: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%; /* Rounded button */
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 20px;
+}
+
+.carousel-button.next {
+    right: 20px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker black on hover */
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-indicators .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #b0b0b0; /* Medium gray for default */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.carousel-indicators .dot.active {
+    background-color: #333333; /* Dark gray for active dot */
+}
+
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #f0f0f0; /* Light gray background */
+    text-align: center;
+    margin-top: 40px;
+}
+
+.testimonials h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: #333333; /* Dark gray for the heading */
+    margin-bottom: 20px;
+}
+
+.testimonial-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial-content {
+    width: 60%;
+    text-align: left;
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555555; /* Medium gray for the text */
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333333; /* Dark gray for the name */
+}
+
+.testimonial-button {
+    background: #333333; /* Dark gray button */
+    border: none;
+    color: #ffffff; /* White text for contrast */
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.testimonial-button:hover {
+    background: #555555; /* Medium gray on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #000; /* Dark gray background */
+    color: #ffffff; /* White text for contrast */
+    padding: 2px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer .social-links {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+footer .social-icon {
+    color: #ffffff; /* White icons for contrast */
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    color: hsl(0, 0%, 100%); /* Light gray on hover */
+}
+
+/* Quote Request Section */
+.quote-request {
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.quote-request h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: #333333; /* Dark gray for the heading */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.accordion-item {
+    margin-top: 15px;
+}
+
+.accordion-header {
+    background-color: #333333; /* Dark gray background */
+    color: #ffffff; /* White text for contrast */
+    padding: 15px;
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    width: 100%;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+    background-color: #555555; /* Medium gray on hover */
+}
+
+.accordion-panel {
+    display: none;
+    background-color: #f7f7f7; /* Light gray for panel */
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.5;
+    color: #444444; /* Medium gray for text */
+    transition: max-height 0.3s ease;
+}
+
+.accordion-item.active .accordion-panel {
+    display: block;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #333333; /* Dark gray button */
+    color: #ffffff; /* White text for contrast */
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background-color: #555555; /* Medium gray on hover */
+}
+
+/* Accordion Panel - Start hidden */
+.accordion-panel {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+/* General Contact Page Styles */
+.contact {
+    max-width: 3000px;
+    max-height: 2500px;
+    margin: auto;
+    padding: 60px 20px;
+    background-color:#f5f5f5;
+    border-radius: 0px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: #333333; /* Dark gray for heading */
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #555555; /* Medium gray for text */
+    margin-bottom: 40px;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    background-color: #ffffff; /* White background for form */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #333333; /* Dark gray for labels */
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    background-color: #f7f7f7; /* Slight gray background */
+    color: #555555; /* Medium gray for text */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa; /* Light gray placeholder */
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #333333; /* Dark gray button */
+    color: #ffffff; /* White text */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #555555; /* Medium gray on hover */
+    transform: scale(1.05);
+}
+
+/* General styling for options group */
+.options-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.options-group label {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #333; /* Dark gray for text */
+}
+
+/* Hide actual radio buttons */
+.options-group input[type="radio"] {
+    display: none;
+}
+
+/* Hover effect for radio options */
+.options-group label:hover {
+    background-color: #f7f7f7; /* Slight gray hover effect */
+    border-color: #555; /* Medium gray border on hover */
+}
+
+/* Highlight selected option */
+.options-group input[type="radio"]:checked + label {
+    background-color: #333; /* Dark gray for selected */
+    color: #fff; /* White text for contrast */
+    border-color: #333; /* Dark gray border */
+}
+/* Highlight active radio option (added by JavaScript) */
+.options-group label.active {
+    background-color: #333; /* Dark gray for active option */
+    color: #fff; /* White text for contrast */
+    border-color: #333; /* Dark gray border */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact {
+        padding: 40px 20px;
+    }
+
+    .contact-form {
+        padding: 30px;
+    }
+
+    .options-group {
+        flex-direction: column;
+    }
+}
+
+/* Date Input Wrapper */
+.date-input-wrapper {
+    position: relative;
+}
+
+.date-input-wrapper input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    background-color: #f7f7f7; /* Slight gray background */
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-links a {
+    color: #333333; /* Dark gray links */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #555555; /* Medium gray on hover */
+}
+
+/* Portfolio Section */
+.portfolio {
+    max-width: 3000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f5f5f5; /* Light gray background */
+    margin-bottom: 500px;
+}
+
+.portfolio h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: #333333; /* Dark gray for heading */
+    margin-bottom: 20px;
+}
+
+.portfolio p {
+    font-size: 1.2rem;
+    color: #555555; /* Medium gray for paragraph */
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Lightroom Button Styling */
+.lightroom-link {
+    margin-top: 20px;
+}
+
+.lightroom-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #333333; /* Dark gray for button */
+    color: #ffffff; /* White text for contrast */
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.lightroom-button:hover {
+    background-color: #555555; /* Medium gray for hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Packages Section */
+.packages {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+.packages h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem; 
+    color: #333333; /* Dark gray for heading */
+    margin-bottom: 20px; 
+    margin-top: -50px;
+}
+
+/* Packages Grid Layout */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Package Items */
+.package-item {
+    background-color: #ffffff; /* White for card background */
+    border-radius: 0px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #333333; /* Dark gray for heading */
+    margin-bottom: 15px;
+}
+
+.package-item p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #555555; /* Medium gray for text */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.package-item img {
+    max-width: 100%;
+    border-radius: 0px;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover Effect */
+.package-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .packages h2 {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 768px) {
+    .main-heading h1 {
+        font-size: 2.5rem; /* Adjust size for smaller screens */
+    }
+}
+
+/* General Schedule Page Styling */
+.schedule {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--background-color); /* Match the overall style */
+}
+
+.schedule h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.schedule p {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Style for Scheduling Widget */
+.schedule-widget {
+    width: 100%;
+    height: calc(100vh - 160px); /* Full height minus header and footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.schedule-widget iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+/* Styling for "free consultation" link */
+.cta-link {
+    color: var(--highlight-color); /* Match the site's highlight color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.cta-link:hover {
+    color: #d9765a; /* Slightly darker highlight color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
