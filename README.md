@@ -16,9 +16,11 @@ FAQ Accordion: Expandable questions where only one remains open at a time for a 
 Free Consultation Button: CTA inside the FAQ section linking to the contact page for consultations.
 
 # Project Status and Challenges #
-|x| Homepage and all UI components are fully functional and responsive.
-|x| Consistent design and seamless navigation across pages
-|x| Live website available at: https://webpages.charlotte.edu/fferariz/Ferariza-FinalProject/home.html
+|x|Homepage and all UI components are fully functional and responsive.
+
+|x|Consistent design and seamless navigation across pages
+
+|x|Live website available at: https://webpages.charlotte.edu/fferariz/Ferariza-FinalProject/home.html
 
 # Challenges & Solutions #
 JavaScript Interactivity: Fine-tuned transitions for smooth functionality using CSS transitions and JavaScript event handling.
